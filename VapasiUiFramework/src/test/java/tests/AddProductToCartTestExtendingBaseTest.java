@@ -10,7 +10,7 @@ import java.util.List;
 import static org.testng.Assert.assertTrue;
 
 
-public class SimpleAddProductToCartTestExtendingBaseTest extends BaseTestCase {
+public class AddProductToCartTestExtendingBaseTest extends BaseTestCase {
 
     @Test
     public void testAddProductToCart(){

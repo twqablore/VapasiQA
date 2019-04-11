@@ -8,7 +8,7 @@ import static org.testng.Assert.assertTrue;
 /**
  * Created by jaggu on 4/4/19.
  */
-public class SimpleLoginTestExtendingBaseTest extends BaseTestCase {
+public class LoginTestExtendingBaseTest extends BaseTestCase {
 
     @Test
     public void testLogin(){
