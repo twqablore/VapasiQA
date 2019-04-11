@@ -23,8 +23,8 @@ public class BaseTestCase {
 
     @BeforeTest
     public void setUp() {
-
         setDriver();
+        driver.navigate().to("https://spree-vapasi.herokuapp.com");
     }
 
 
