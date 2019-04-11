@@ -23,6 +23,7 @@ public class BaseTestCase {
 
     @BeforeTest
     public void setUp() {
+
         setDriver();
     }
 

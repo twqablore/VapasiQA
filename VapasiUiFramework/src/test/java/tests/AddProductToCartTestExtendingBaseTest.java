@@ -19,7 +19,7 @@ public class AddProductToCartTestExtendingBaseTest extends BaseTestCase {
 
         String aProduct = "Ruby on Rails Bag";
         addProductToCart("Bags", aProduct);
-        assertTrue(isProductInCart(aProduct + "wohoo"), "Product " + aProduct + " not added in Cart");
+        assertTrue(isProductInCart(aProduct), "Product " + aProduct + " not added in Cart");
     }
 
     private void addProductToCart(String category, String aProduct) {
