@@ -13,13 +13,11 @@ import static org.testng.Assert.assertTrue;
 
 public class AddProductToCartTestWithPOPattern extends BaseTestCase {
 
-    @Test
+    @Test(groups="smoke")
     public void testAddProductToCart(){
-
         HomePage homePage = new HomePage(driver);
         String aProduct = "Ruby on Rails Bag";
         String category = "Bags";
-        driver.navigate().to("https://spree-vapasi.herokuapp.com");
         homePage.navigateToLoginPage().login("spree@example.com", "spree123").
                 addProductToCart(category, aProduct);
 

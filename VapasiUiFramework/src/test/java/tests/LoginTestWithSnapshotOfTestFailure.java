@@ -23,7 +23,7 @@ public class LoginTestWithSnapshotOfTestFailure {
     String currentUsersWorkingDir = System.getProperty("user.dir");
     private String resultsDir;
 
-    @BeforeTest
+    @BeforeTest(alwaysRun = true)
     public void setUp(ITestContext context){
 
         System.out.println("Dir is " + currentUsersWorkingDir);
@@ -31,7 +31,6 @@ public class LoginTestWithSnapshotOfTestFailure {
         driver = new ChromeDriver();
         resultsDir = currentUsersWorkingDir+ "/src/test/snapshot";
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
     }
 
     @Test
@@ -44,7 +43,7 @@ public class LoginTestWithSnapshotOfTestFailure {
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult result){
 
         if (result.getStatus() == ITestResult.FAILURE) {

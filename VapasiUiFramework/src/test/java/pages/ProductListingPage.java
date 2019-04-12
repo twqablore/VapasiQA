@@ -53,7 +53,6 @@ public class ProductListingPage {
         System.out.println("Length is " +  products.size());
         for (Iterator<WebElement> iterator = products.iterator(); iterator.hasNext(); ) {
             WebElement product = iterator.next();
-            System.out.println(product.getAttribute("alt"));
             if(product.getAttribute("alt").equals(productToBeAdded)) return product;
         }
         return null;

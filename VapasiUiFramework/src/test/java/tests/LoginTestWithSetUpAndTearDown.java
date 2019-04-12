@@ -19,7 +19,7 @@ public class LoginTestWithSetUpAndTearDown {
     ChromeDriver driver;
 
 
-    @BeforeTest
+    @BeforeTest(alwaysRun = true)
     public void setUp(){
 
         String currentUsersWorkingDir = System.getProperty("user.dir");
@@ -42,7 +42,7 @@ public class LoginTestWithSetUpAndTearDown {
 
 
 
-    @AfterTest
+    @AfterTest(alwaysRun = true)
     public void tearDown(){
 
         driver.close();

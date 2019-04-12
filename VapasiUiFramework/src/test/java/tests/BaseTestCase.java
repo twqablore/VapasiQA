@@ -7,9 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import util.ConfigReader;
 
 import java.io.File;
@@ -21,9 +19,10 @@ public class BaseTestCase {
     WebDriver driver;
     ConfigReader config = new ConfigReader();
 
-    @BeforeTest
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
         setDriver();
+        System.out.println("Set up driver");
         driver.navigate().to("https://spree-vapasi.herokuapp.com");
     }
 
@@ -43,9 +42,8 @@ public class BaseTestCase {
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void captureScreenshotIfFailed(ITestResult result){
-
         if (result.getStatus() == ITestResult.FAILURE) {
             takeScreenshot(result);
         }
@@ -69,9 +67,9 @@ public class BaseTestCase {
         }
     }
 
-    @AfterTest
+    @AfterMethod(alwaysRun = true)
     public void tearDown(){
-
+        System.out.println("Tear down driver");
         driver.close();
         driver.quit();
 
