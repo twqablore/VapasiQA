@@ -11,7 +11,7 @@ import java.util.List;
 import static org.testng.Assert.assertTrue;
 
 
-public class AddProductToCartTestWithPOPattern extends BaseTestCase {
+public class AddProductToCartWithPOPatternTest extends BaseTestCase {
 
     @Test(groups="smoke")
     public void testAddProductToCart(){

@@ -10,7 +10,7 @@ import static org.testng.AssertJUnit.assertFalse;
 /**
  * Created by jaggu on 4/11/19.
  */
-public class LoginTestWithDataProvider extends BaseTestCase {
+public class LoginWithDataProviderTest extends BaseTestCase {
 
     @Test(dataProvider="getUserNameAndPassword",groups="smoke")
     public void testLogin(String username , String password){

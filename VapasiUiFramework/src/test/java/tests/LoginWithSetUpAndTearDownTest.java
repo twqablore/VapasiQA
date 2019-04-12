@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 
-public class LoginTestWithSetUpAndTearDown {
+public class LoginWithSetUpAndTearDownTest {
 
     ChromeDriver driver;
 
