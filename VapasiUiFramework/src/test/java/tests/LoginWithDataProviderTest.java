@@ -14,7 +14,7 @@ public class LoginWithDataProviderTest extends BaseTestCase {
 
     @Test(dataProvider="getUserNameAndPassword",groups="smoke")
     public void testLogin(String username , String password){
-
+        driver.navigate().to("https://spree-vapasi.herokuapp.com");
         driver.findElement(By.id("link-to-login")).click();
         driver.findElement(By.id("spree_user_email")).sendKeys(username);
         driver.findElement(By.id("spree_user_password")).sendKeys(password);
@@ -27,12 +27,12 @@ public class LoginWithDataProviderTest extends BaseTestCase {
     public Object[][] getUserNameAndPassword(){
         return new Object[][]
                 {
-                        { "spree@example.com", "spree123" }
+                        { "testautomation@example.com", "spree123" }
                 };
     }
 
 
-    @Test(dataProvider="getInvalidUserNameAndPassword")
+    @Test(dataProvider="getInvalidUserNameAndPassword",groups="smoke")
     public void testInvalidLogin(String username , String password){
         driver.navigate().to("https://spree-vapasi.herokuapp.com");
         driver.findElement(By.id("link-to-login")).click();

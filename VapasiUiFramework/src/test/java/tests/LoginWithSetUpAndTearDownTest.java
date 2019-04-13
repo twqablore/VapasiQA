@@ -27,7 +27,6 @@ public class LoginWithSetUpAndTearDownTest {
         System.setProperty("webdriver.chrome.driver",currentUsersWorkingDir+"/src/test/resources/chromedriver");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
     }
 
     @Test

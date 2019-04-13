@@ -22,7 +22,9 @@ public class BaseTestCase {
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
         setDriver();
+
         System.out.println("Set up driver");
+        System.out.println("Driver is " +  driver);
         driver.navigate().to("https://spree-vapasi.herokuapp.com");
     }
 
