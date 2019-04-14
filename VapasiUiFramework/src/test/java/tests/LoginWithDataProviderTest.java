@@ -5,11 +5,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
-import static org.testng.AssertJUnit.assertFalse;
 
-/**
- * Created by jaggu on 4/11/19.
- */
 public class LoginWithDataProviderTest extends BaseTestCase {
 
     @Test(dataProvider="getUserNameAndPassword",groups="smoke")

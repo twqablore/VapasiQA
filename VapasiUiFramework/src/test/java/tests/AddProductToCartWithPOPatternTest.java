@@ -1,14 +1,7 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import pages.HomePage;
-
-import java.util.Iterator;
-import java.util.List;
-
-import static org.testng.Assert.assertTrue;
 
 
 public class AddProductToCartWithPOPatternTest extends BaseTestCase {
