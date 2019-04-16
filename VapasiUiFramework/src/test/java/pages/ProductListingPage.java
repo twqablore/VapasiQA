@@ -26,18 +26,14 @@ public class ProductListingPage {
         PageFactory.initElements(webdriver, this);
     }
 
-    public void addProductToCart(String category, String aProduct) {
+    public ShoppingCartPage addProductToCart(String category, String aProduct) {
         selectProductWithInACategory(category, aProduct);
         addToCart();
+        return new ShoppingCartPage(driver);
     }
 
     private void addToCart() {
         add_to_cart_button.click();
-    }
-
-    public ProductListingPage validateProductInCart(String product){
-        assertTrue(isProductInCart(product) , "Product " + product + " not in cart");
-        return this;
     }
 
     private void selectProductWithInACategory(String sCategory, String sProduct) {
@@ -68,19 +64,6 @@ public class ProductListingPage {
         return null;
     }
 
-    public boolean isProductInCart(String aProduct) {
-        List<WebElement> lineItems = driver.findElement(By.id("cart-detail")).findElements(By.className("line-item"));
-        System.out.println("No if line items is " +  lineItems.size());
-        for (Iterator<WebElement> iterator = lineItems.iterator(); iterator.hasNext(); ) {
-            WebElement item = iterator.next();
-            String product = item.findElement(By.tagName("img")).getAttribute("alt");
-            if(product.equals(aProduct)) {
-                System.out.println("Product in cart ");
-                return true;
-            }
-        }
-        return false;
 
-    }
 
 }
